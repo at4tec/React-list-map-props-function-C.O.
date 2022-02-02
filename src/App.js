@@ -1,6 +1,15 @@
 import React from 'react';
 import './style.css';
 
+//child
+class Person extends React.Component{
+render(){
+return<li>{this.props.name} is {this.props.age} knows {this.props.skill}</li>
+}
+}
+
+
+//parent
 export default function App() {
   //const names = ['Ahmed', 'Aly', 'Abdo'];
   const persons=[
@@ -22,7 +31,10 @@ export default function App() {
 
   {persons.map(
        (e) => (
-        <li>{e.name} is {e.age} knows {e.skill}</li>
+       <Person
+        name={e.name} 
+        age={e.age} 
+        skill={e.skill}/>
             ))
   }
 
